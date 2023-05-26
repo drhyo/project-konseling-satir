@@ -17,8 +17,8 @@ class ArticelGenZ extends Component {
 
 
                 <section className='p-2'>
-                    <div className=" flex gap-2 justify-center  text-lg mt-[30px] mb-[30px] items-center lg:justify-start lg:ml-28 ">
-                        <p className="text-[#6F6F6F] font-light">Webminar </p>
+                    <div className=" flex gap-2 justify-center  text-base md:text-lg mt-[30px] mb-[30px] items-center lg:justify-start lg:ml-28 ">
+                        <p className="text-[#6F6F6F] font-light ">Webminar</p>
                         <VscChevronRight className="text-[#002157]"/> 
                         <p className="text-[#002157]">Webinar Belajar Life Planning untuk Gen Z</p>
                         </div>

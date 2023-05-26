@@ -2,20 +2,20 @@ import React from "react";
 
 const IconWebimar = () => {
     return(
-    <section id="section4">
-        <div className="w-full flex justify-center mt-[50px] text-[#4B465C]">
-            <div className="w-[60%] font-medium text-lg flex justify-evenly ">
-                <div className="bg-[#002157] w-[150px] h-[50px] text-slate-100 text-center rounded-md py-[11px]">
+    <section>
+        <div className="mt-20 lg:mt-[100px] text-[#4B465C] p-2">
+            <div className="w-full  font-medium text-xs  lg:text-lg flex justify-center md:gap-10">
+                <div className="bg-[#002157] flex items-center p-3 lg:px-5 lg:h-10 lg:mt-2  text-slate-100 rounded-md">
                     <a href="#" >Webminar</a>
                 </div>
-                <div className="w-[150px] h-[50px] mt-[11px] pl-[20px]">
-                    <a href="#" className="hover:text-[#002157]" >Pelatihan</a> 
+                <div className="  p-3 hover:text-[#002157] ">
+                    <a href="#" >Pelatihan</a>
                 </div>
-                <div className="w-[250px]">
-                    <a href="#" className="hover:text-[#002157]">Layanan konseling individu   pasangan & keluarga</a>
+                <div className="px-4 py-1 hover:text-[#002157] ">
+                    <a href="#" >Layanan konseling individu<br/> pasangan & keluarga</a>
                 </div>
-                <div className="w-[150px] h-[50px] mt-[11px]">
-                    <a href="#" className="hover:text-[#002157]">Konsultasi</a>
+                <div className="p-3 hover:text-[#002157] ">
+                    <a href="#" >Konsultasi</a>
                 </div>
             </div>
         </div>
