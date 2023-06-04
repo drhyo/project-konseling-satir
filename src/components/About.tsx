@@ -1,25 +1,75 @@
-import React from 'react';
+import {useState,useEffect} from 'react';
+// import img
+import Carousel from '../img-page/Carousel.webp';
+import onePiece from '../img-page/onePiece.png';
+import imageLinh from '../img-page/linh-le.webp';
+
+// import icon
+import { BsChevronCompactLeft, BsChevronCompactRight} from 'react-icons/bs';
 
 
-import Carousel from '../img-page/Carousel.webp'
-import logos_youtube_icon from '../img-page/logos_youtube-icon.webp' 
+
+const imageSlide = [
+    {
+        url: imageLinh
+    },
+    {
+        url: onePiece
+    },
+    {
+        url: Carousel
+    },
+]
 
 
-
+let count: number = 0; 
 const About = () => {
+
+    useEffect(() => {
+        starSlider()
+    }, [])
+
+    const starSlider = () => {
+        setInterval(() =>{
+            nextSlide();
+
+        }, 4000)
+    }
+
+    const [currentIndex,setCurrentIndex] = useState(0);
+
+    const prevSlide = () => {
+     const imageLength = imageSlide.length;
+     count = ( currentIndex +  imageLength - 1) % imageLength
+     setCurrentIndex(count)
+    }
+
+    const nextSlide = () => {
+        count = (count + 1) % imageSlide.length 
+        setCurrentIndex(count)
+    }    
+
+
     return(
     <section className='mt-5 lg:mt-0'>
         <div className="w-full flex flex-row-reverse justify-center">
             <div className='w-full md:w-[40%] flex flex-col gap-1 lg:gap-10 lg:ml-10'>
                 <h3 className="text-lg font-semibold text-[#002157] sm:text-xl md:text-2xl lg:text-3xl">Tentang Konseling Satir</h3>
                 <p className="font-extralight text-xs text-[#5B5B5B] sm:text-base md:text-lg lg:text-xl">It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-                <div className="bg-[#002157] w-[120px] flex rounded-md py-2 lg:hidden mx-auto mt-2">
-                        <a className=" text-slate-100 text-xs font-bold m-auto" href="#">Daftar Sekarang</a>
+                <div className="bg-[#002157] w-[120px] flex rounded-md py-2 sm:w-[300px] lg:w-[480px] mx-auto mt-2">
+                        <a className=" text-slate-100 text-xs sm:text-base lg:text-xl font-bold m-auto" href="#">Daftar Konseling</a>
                 </div>
             </div>
-            <div className="w-full md:w-1/2 xl:w-[40%] h-full relative px-5 flex items-center justify-center mt-5 md:mt-0">
-                <img  src={Carousel} alt="" className=" rounded-lg"/>
-                <img src={logos_youtube_icon} alt="logo-youtube" className="absolute top-[45%] left-[45%] w-[8%]"/>
+            <div className="w-[350px] h-[120px] relative px-5 flex items-center justify-center mt-5 sm:w-[500px] sm:h-[200px] md:mt-0 lg:w-[680px] lg:h-[350px]">
+                <div style={{backgroundImage:`url(${imageSlide[currentIndex].url})`}} className='w-full h-full rounded-lg bg-center bg-cover duration-500'></div>
+                {/* left arrow */}
+                <div className='hidden absolute group-cover:block top-[50%] -translate-x-0 translate-y-[-50%] left-5 rounded-full p-2 bg-black/20 text-white cursor-pointer md:text-3xl'>
+                    <BsChevronCompactLeft onClick={prevSlide} />
+                </div> 
+                {/* right arrow */}
+                <div className='hidden absolute group-cover:block  top-[50%] -translate-x-0 translate-y-[-50%] right-5 rounded-full p-2 bg-black/20 text-white cursor-pointer md:text-3xl'>
+                    <BsChevronCompactRight onClick={nextSlide}/>
+                </div>
             </div>
         </div>
     </section>
@@ -27,3 +77,5 @@ const About = () => {
 }
 
 export default About;
+
+

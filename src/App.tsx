@@ -6,7 +6,7 @@ import Register from './Page/Register';
 function App() {
   return (
     <div className="App">
-      <LayananWebimar/>
+      <HomePage/>
     </div>
   );
 }
